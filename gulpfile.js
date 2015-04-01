@@ -10,9 +10,9 @@ var reload = browserSync.reload;
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var transform = require('vinyl-transform');
 var swig = require('gulp-swig');
 var uglify = require('gulp-uglify');
-var transform = require('vinyl-transform');
 
 gulp.task('serve', function () {
   browserSync({
