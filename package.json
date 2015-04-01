@@ -1,7 +1,7 @@
 {
   "name": "gulp-zero",
   "version": "0.0.1",
-  "description": "Same gulp taste. Zero sugar. A gulp starter kit.",
+  "description": "Same gulp taste. Zero sugar. A gulp recipe.",
   "devDependencies": {
     "browser-sync": "^2.5.2",
     "browserify": "^9.0.4",
