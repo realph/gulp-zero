@@ -1,0 +1,18 @@
+$blue: #cb4849;
+
+body {
+  background: $blue;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 24em;
+
+  .item {
+    flex: none;
+  }
+}
