@@ -13,15 +13,21 @@ var transform = require('vinyl-transform');
 var swig = require('gulp-swig');
 var uglify = require('gulp-uglify');
 
+// Start server
 gulp.task('serve', function () {
   browserSync({
     server: './Build'
   });
 });
 
+// Swig task
 gulp.task('templates', function() {
   return gulp.src('./src/*.html')
-    .pipe(swig())
+    .pipe(swig({
+      defaults: {
+        cache: false
+      }
+    }))
     .pipe(gulp.dest('./Build'))
     .pipe(reload({stream: true}))
 });
