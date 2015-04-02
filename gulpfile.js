@@ -7,7 +7,6 @@ var imagemin = require('gulp-imagemin');
 var minifyCSS = require('gulp-minify-css');
 var plumber = require('gulp-plumber');
 var reload = browserSync.reload;
-var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var transform = require('vinyl-transform');
@@ -24,7 +23,7 @@ gulp.task('templates', function() {
   return gulp.src('./src/*.html')
     .pipe(swig())
     .pipe(gulp.dest('./Build'))
-    .on("end", reload)
+    .pipe(reload({stream: true}))
 });
 
 // Sass task
@@ -37,7 +36,6 @@ gulp.task('sass', function(event) {
       cascade: false
     }))
     .pipe(minifyCSS())
-    .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./Build/css'))
     .pipe(reload({stream: true}))
 });
