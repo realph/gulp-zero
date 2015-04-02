@@ -10,7 +10,7 @@ A low-calorie flavour gulp recipe.
 
 Gulp Zero is a starting point for projects using the gulp build system. I've used a lot of gulp systems over the past few months, and they often come in two flavours: stripped or bloated. So I decided to create my own.
 
-#Features
+##Features
 - Compiles Sass
 - Minifies css
 - Browserify (lets you `require` packages installed via npm and bundles your JavaScript)
@@ -20,7 +20,7 @@ Gulp Zero is a starting point for projects using the gulp build system. I've use
 - Browser reload on saved changes
 - Spins up local server
 
-#Getting started
+##Getting started
 
 If you would like to use this on a project, simply run:
 
