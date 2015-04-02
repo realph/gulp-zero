@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var browserSync = require('browser-sync');
 var prefix = require('gulp-autoprefixer');
-var imagemin = require('gulp-imagemin');
 var minifyCSS = require('gulp-minify-css');
 var plumber = require('gulp-plumber');
 var reload = browserSync.reload;
