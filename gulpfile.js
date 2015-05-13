@@ -2,11 +2,14 @@ var gulp = require('gulp');
 
 var browserify = require('browserify');
 var browserSync = require('browser-sync');
-var prefix = require('gulp-autoprefixer');
+var buffer = require('vinyl-buffer');
+var gutil = require('gulp-util');
 var minifyCSS = require('gulp-minify-css');
+var prefix = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
+var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var transform = require('vinyl-transform');
 var swig = require('gulp-swig');
@@ -47,17 +50,21 @@ gulp.task('sass', function(event) {
 
 // JS task
 gulp.task('js', function () {
-  var browserified = transform(function(filename) {
-    var b = browserify(filename);
-    return b.bundle();
+  var b = browserify({
+    entries: './src/js/app.js',
+    debug: true
   });
-  return gulp.src('./src/js/*.js')
-    .pipe(browserified)
-    .pipe(sourcemaps.init({loadMaps: true}))
+  return b.bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({
+      loadMaps: true}
+    ))
     .pipe(uglify())
+      .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./Build/js'))
-    .pipe(reload({stream: true}))
+    .pipe(reload({stream: true}));
 });
 
 // Default task
