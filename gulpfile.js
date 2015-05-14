@@ -21,8 +21,8 @@ gulp.task('serve', function () {
   });
 });
 
-// Swig task
-gulp.task('templates', function() {
+// HTML task
+gulp.task('html', function() {
   return gulp.src('./src/*.html')
     .pipe(gulp.dest('./Build'))
     .pipe(reload({stream: true}))
@@ -57,8 +57,8 @@ gulp.task('js', function () {
 });
 
 // Default task
-gulp.task('default', ['serve', 'templates', 'sass', 'js'], function() {
-  gulp.watch('./src/*.html', ['templates']);
+gulp.task('default', ['serve', 'html', 'sass', 'js'], function() {
+  gulp.watch('./src/*.html', ['html']);
   gulp.watch(['./src/scss/*.scss', './src/scss/**/*.scss'], ['sass']);
   gulp.watch('./src/js/*.js', ['js']);
 });

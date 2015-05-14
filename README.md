@@ -16,7 +16,6 @@ Gulp Zero is a starting point for projects using the gulp build system. I've use
 - Browserify (lets you `require` packages installed via npm and bundles your JavaScript)
 - Minifies JS
 - Autoprefixer (adds vendor prefixes so you don't have to)
-- Swig to HTML
 - Browser reload on saved changes
 - Spins up local server
 
