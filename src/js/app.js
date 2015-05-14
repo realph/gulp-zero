@@ -1,3 +1,12 @@
-var greeting = "Hello World!";
+(function() {
+  'use strict';
 
-console.log(greeting);
+  var angular = require('angular');
+
+  angular.module('zeroApp', [])
+  .controller('MainCtrl', ['$scope', function($scope) {
+      $scope.msg = "Hello Angular!";
+      console.log($scope.msg);
+  }]);
+
+})();
