@@ -56,9 +56,12 @@ gulp.task('js', function () {
     .pipe(reload({stream: true}));
 });
 
-// Default task
-gulp.task('default', ['serve', 'html', 'sass', 'js'], function() {
+// Watch task
+gulp.task('watch', function() {
   gulp.watch('./src/*.html', ['html']);
   gulp.watch(['./src/scss/*.scss', './src/scss/**/*.scss'], ['sass']);
   gulp.watch('./src/js/*.js', ['js']);
 });
+
+// Default task
+gulp.task('default', ['serve', 'html', 'sass', 'js', 'watch']);
