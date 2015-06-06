@@ -29,8 +29,8 @@ gulp.task('html', function() {
 });
 
 // Sass task
-gulp.task('sass', function(event) {
-  return gulp.src(['./src/scss/*.scss', './src/scss/**/*.scss'])
+gulp.task('sass', function() {
+  gulp.src(['./src/scss/*.scss', './src/scss/**/*.scss'])
     .pipe(plumber())
     .pipe(sass())
     .pipe(prefix({
