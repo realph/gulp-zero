@@ -11,7 +11,6 @@ var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
-var transform = require('vinyl-transform');
 var uglify = require('gulp-uglify');
 
 // Start server
