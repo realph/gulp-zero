@@ -43,11 +43,14 @@ gulp.task('sass', function() {
 
 // JS task
 gulp.task('js', function () {
-  return browserify({entries: ['./src/js/app.js']})
+    return browserify({
+      entries: './src/js/app.js',
+      debug: true
+    })
     .bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
       .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
