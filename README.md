@@ -13,7 +13,7 @@ Gulp Zero is a starting point for projects using the gulp build system. I've use
 ##Features
 - Compiles Sass
 - Minifies css
-- Browserify (lets you `require` packages installed via npm and bundles your JavaScript)
+- Browserify (lets you `require` packages installed via npm and bundle your JavaScript)
 - Minifies JS
 - Autoprefixer (adds vendor prefixes so you don't have to)
 - Browser reload on saved changes
@@ -23,10 +23,10 @@ Gulp Zero is a starting point for projects using the gulp build system. I've use
 
 If you would like to use this on a project, simply run:
 
-    git clone https://github.com/realph/gulp-zero.git gulp-zero
+    git clone https://github.com/realph/gulp-zero.git
     cd gulp-zero
-    npm install -g gulp
-    npm install
+    npm i gulp -g
+    npm i
     gulp
 
 It's that simple!
