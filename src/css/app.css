@@ -1,0 +1,25 @@
+:root {
+--fontSize: 1rem;
+--mainColor: #fc2a5c;
+}
+
+body {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  background: color(var(--mainColor) whiteness(50%));
+  color: #fff;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+
+  @nest & .item {
+    margin: 0 auto;
+  }
+
+}
