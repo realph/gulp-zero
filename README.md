@@ -11,11 +11,9 @@ A low-calorie flavour gulp recipe.
 Gulp Zero is a starting point for projects using the gulp build system. I've used a lot of gulp systems over the past few months, and they often come in two flavours: stripped or bloated. So I decided to create my own.
 
 ##Features
-- Compiles Sass
-- Minifies css
+- Transpiles CSS using [PostCSS](https://github.com/postcss/postcss#readme) and [cssnext](http://cssnext.io/)
 - Browserify (lets you `require` packages installed via npm and bundle your JavaScript)
 - Minifies JS
-- Autoprefixer (adds vendor prefixes so you don't have to)
 - Browser reload on saved changes
 - Spins up local server
 
@@ -35,7 +33,7 @@ It's that simple!
 
 The MIT License (MIT)
 
-Copyright (c) 2015 realph
+Copyright (c) 2016 realph
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
