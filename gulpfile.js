@@ -5,7 +5,6 @@ var browserSync = require('browser-sync');
 var buffer = require('vinyl-buffer');
 var cssnext = require('postcss-cssnext');
 var gutil = require('gulp-util');
-var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var reload = browserSync.reload;
 var source = require('vinyl-source-stream');
@@ -29,7 +28,6 @@ gulp.task('html', function() {
 // Css task
 gulp.task('css', function () {
   return gulp.src(['./src/css/*.css', './src/css/**/*.css'])
-    .pipe(plumber())
     .pipe(postcss([cssnext]))
     .pipe(gulp.dest('./Build/css'))
     .pipe(reload({stream: true}))
