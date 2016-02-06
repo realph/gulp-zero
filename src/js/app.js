@@ -1,3 +1,3 @@
-var greeting = "Hello World!";
+var greeting = "Hello Gulp!";
 
 console.log(greeting);
