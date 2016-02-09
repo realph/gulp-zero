@@ -21,41 +21,41 @@ gulp.task('serve', function () {
 // HTML task
 gulp.task('html', function() {
   return gulp.src('./src/*.html')
-    .pipe(gulp.dest('./Build'))
-    .pipe(reload({stream: true}))
+  .pipe(gulp.dest('./Build'))
+  .pipe(reload({stream: true}));
 })
 
-// Css task
+// CSS task
 gulp.task('css', function () {
   return gulp.src(['./src/css/*.css', './src/css/**/*.css'])
-    .pipe(postcss([cssnext]))
-    .pipe(gulp.dest('./Build/css'))
-    .pipe(reload({stream: true}))
-})
+  .pipe(postcss([cssnext]))
+  .pipe(gulp.dest('./Build/css'))
+  .pipe(reload({stream: true}));
+});
 
 // JS task
 gulp.task('js', function () {
-    return browserify({
-      entries: './src/js/app.js',
-      debug: true
-    })
-    .bundle()
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify())
-      .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./Build/js'))
-    .pipe(reload({stream: true}))
-})
+  return browserify({
+    entries: './src/js/app.js',
+    debug: true
+  })
+  .bundle()
+  .pipe(source('app.js'))
+  .pipe(buffer())
+  .pipe(sourcemaps.init({loadMaps: true}))
+  .pipe(uglify())
+    .on('error', gutil.log)
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest('./Build/js'))
+  .pipe(reload({stream: true}));
+});
 
 // Watch task
 gulp.task('watch', function() {
   gulp.watch('./src/*.html', ['html']);
   gulp.watch(['./src/css/*.css', './src/css/**/*.css'], ['css']);
-  gulp.watch('./src/js/*.js', ['js'])
-})
+  gulp.watch('./src/js/*.js', ['js']);
+});
 
 // Default task
-gulp.task('default', ['serve', 'html', 'css', 'js', 'watch'])
+gulp.task('default', ['serve', 'html', 'css', 'js', 'watch']);
