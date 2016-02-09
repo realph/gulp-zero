@@ -12,18 +12,18 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
 // Start server
-gulp.task('serve', function () {
-  browserSync({
-    server: './Build'
-  });
-});
+    gulp.task('serve', function () {
+      browserSync({
+        server: './Build'
+      });
+    });
 
 // HTML task
 gulp.task('html', function() {
   return gulp.src('./src/*.html')
   .pipe(gulp.dest('./Build'))
   .pipe(reload({stream: true}));
-})
+});
 
 // CSS task
 gulp.task('css', function () {
