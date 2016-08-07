@@ -6,6 +6,7 @@ var buffer = require('vinyl-buffer');
 var cssnext = require('postcss-cssnext');
 var gutil = require('gulp-util');
 var postcss = require('gulp-postcss');
+var postcssImport = require('postcss-import');
 var reload = browserSync.reload;
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
@@ -28,7 +29,7 @@ gulp.task('html', function() {
 // CSS task
 gulp.task('css', function () {
   return gulp.src(['./src/css/*.css', './src/css/**/*.css'])
-  .pipe(postcss([cssnext]))
+  .pipe(postcss([postcssImport, cssnext]))
   .pipe(gulp.dest('./Build/css'))
   .pipe(reload({stream: true}));
 });
@@ -50,12 +51,20 @@ gulp.task('js', function () {
   .pipe(reload({stream: true}));
 });
 
+// Images task
+gulp.task('images', function() {
+  return gulp.src('./src/img/**/*')
+  .pipe(gulp.dest('./Build/img'))
+  .pipe(reload({stream: true}));
+})
+
 // Watch task
 gulp.task('watch', function() {
   gulp.watch('./src/*.html', ['html']);
   gulp.watch(['./src/css/*.css', './src/css/**/*.css'], ['css']);
   gulp.watch('./src/js/*.js', ['js']);
+  gulp.watch('./src/img/**/*', ['images']);
 });
 
 // Default task
-gulp.task('default', ['serve', 'html', 'css', 'js', 'watch']);
+gulp.task('default', ['serve', 'html', 'css', 'js', 'images', 'watch']);

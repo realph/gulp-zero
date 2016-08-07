@@ -1,10 +1,40 @@
+@import 'basscss';
+@import 'basscss-responsive-margin';
+@import 'basscss-responsive-padding';
+@import 'basscss-responsive-layout';
+@import 'basscss-responsive-position';
+@import 'basscss-responsive-typography';
+@import 'basscss-responsive-type-scale';
+@import 'basscss-forms';
+@import 'basscss-btn';
+@import 'basscss-btn-outline';
+@import 'basscss-btn-primary';
+@import 'basscss-btn-sizes';
+@import 'basscss-colors';
+@import 'basscss-background-colors';
+@import 'basscss-background-images';
+@import 'basscss-border-colors';
+@import 'basscss-darken';
+@import 'basscss-lighten';
+@import 'basscss-input-range';
+@import 'basscss-progress';
+@import 'basscss-all';
+@import 'basscss-media-object';
+@import 'basscss-highlight';
+@import 'basscss-highlight-dark';
+
 :root {
 --fontSize: 1rem;
 --mainColor: #fc8181;
 }
 
+html { -webkit-font-smoothing: antialiased; }
+body { margin: 0 }
+img { max-width: 100% }
+svg { max-height: 100% }
+
 body {
-  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  font-family: "DinPro", -apple-system, Helvetica, Arial;  
   background: color(var(--mainColor) whiteness(50%));
   color: #fff;
 }
@@ -22,4 +52,89 @@ body {
     margin: 0 auto;
   }
 
+}
+
+picture {
+  /*transform-origin: 20% 80%;*/
+  /*transition: all 30s linear;*/
+  /*transform: translateX(-50px);*/
+  /*background-repeat: no-repeat;*/
+  background: red;
+  height: 100vh;
+  /*animation: pan 13s ease-in-out infinite;*/
+  position: relative;
+  z-index: -1;
+  width: 100vw;
+  /*overflow: hidden;*/
+
+  @nest & > * {
+    z-index: 1;
+  }
+
+}
+
+picture img {
+  position: absolute;
+  /*transform: translateX(-0px);*/
+  /*animation: ballroll 5s linear;*/
+}
+
+
+/*@keyframes pan {
+  0% { transform: translateX(-50px); }
+  100% { transform: translateX(-300px); }
+}*/
+
+.site-header {
+  padding: 45px 20px;
+
+  @nest & h1 {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.22px;
+    color: #fff;
+    font-size: 22px;
+  }
+
+  @nest & .menu-button {
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: relative;
+    bottom: 2px;
+  }
+
+  @nest & .hamburger {
+    position: absolute;
+    transform: rotate(90deg);
+    font-size: 24px;
+    letter-spacing: -1.88px;
+    font-weight: 500;
+    bottom: -1px;
+    left: 2px;
+    color: #fff;
+  }
+}
+
+.collection-title {
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  padding: 7px 12px 2px;
+  font-weight: 500;
+  letter-spacing: 1.48px;
+  display: table;
+}
+
+.site-footer {
+  padding: 42px 0;
+  
+  @nest & {
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+  }
 }
