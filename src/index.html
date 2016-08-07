@@ -1,33 +1,14 @@
 <html ng-app="gulpZeroApp">
   <head>
     <title>Gulp Zero</title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     <link rel="stylesheet" href="./css/app.css">
   </head>
-  <body>
-  
-  <picture class="flex flex-column">
-    <img src="img/snow.jpg">
-    <header class="site-header flex items-center">
-      <h1 class="order-2 m0 mx-auto">Kier Decordova</h1>
-      <a class="menu-button order-1" href="">
-        <div class="hamburger order-1">III</div>
-      </a>
-    </header>
-
-    <div class="flex-auto"></div>
-
-    <span class="collection-title">Monte Rosa</span>
-
-    <footer class="site-footer flex">
-      <span class="copyright mx-auto">2016</span>
-    </footer>
-  </picture>
-
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js"></script>-->
+  <body ng-controller="mainCtrl">
+    <div class="container">
+      <div class="item">
+        <h1>Hello Gulp!</h1>
+      </div>
+    </div>
   <script src="./js/app.js"></script>
   </body>
 </html>
